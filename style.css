@@ -1,0 +1,39 @@
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8fafc;
+}
+
+/* KUNCI UTAMA: Menyembunyikan elemen */
+.hidden {
+    display: none !important;
+}
+
+/* STYLE STRUK */
+#receipt-box {
+    background-color: white;
+    background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+    background-size: 20px 20px;
+    border-top: 8px solid #2563eb;
+    padding: 2rem;
+    border-radius: 24px;
+}
+
+/* ATURAN CETAK */
+@media print {
+    body * { visibility: hidden; }
+    #receipt-box, #receipt-box * { visibility: visible; }
+    #receipt-box {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+    .no-print { display: none !important; }
+}
